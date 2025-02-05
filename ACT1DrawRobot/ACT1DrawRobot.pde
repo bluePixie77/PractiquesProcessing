@@ -8,7 +8,6 @@ void draw(){
   int x = mouseX;
   int y = mouseY;
   
- // circle(x, y, 10);
   background(255);
   drawRobot(x, y);
 }  
@@ -16,11 +15,11 @@ void drawRobot(int x, int y){
   drawLegs(x, y);
   drawNeck(x, y);
   drawBody(x, y);
-  //draw3Lines(x, y);
   drawArms(x, y);
   drawHead(x, y);
   drawStar(x, y);
-  drawLinesArms(x, y);
+  drawLines(x, y);
+  drawAntena(x, y);
 }  
 void drawBody(int x, int y){
   strokeWeight(5);
@@ -33,7 +32,7 @@ void drawBody(int x, int y){
   rect(x, y-20, width/3, height/6);
   
 }  
-void drawLinesArms(int x, int y){
+void drawLines(int x, int y){
   for(int i=0; i<100; i+=20){
     // Arms
     line(x+70, y+50-i, x+90, y+50-i);
@@ -41,10 +40,11 @@ void drawLinesArms(int x, int y){
     // Legs
     line(x-30, y+150-i, x-10, y+150-i);
     line(x+30, y+150-i, x+10, y+150-i);
-    // antena
-
- 
   }  
+}  
+void drawAntena(int x, int y){
+  line(x+40, y-150, x+40, y-185);
+  line(x+30, y-155, x+30, y-170);
 }  
 
 void drawArms(int x, int y){
@@ -70,6 +70,8 @@ void drawEye(int x, int y){
   circle(x, y-140, 40);
   fill(255, 0, 0); 
    circle(x, y-140, 20);
+  fill(255);
+  circle(x+8, y-140, 10);
 }  
 
 void drawNeck(int x, int y){
