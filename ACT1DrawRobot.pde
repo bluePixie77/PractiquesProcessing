@@ -20,23 +20,33 @@ void drawRobot(int x, int y){
   drawArms(x, y);
   drawHead(x, y);
   drawStar(x, y);
+  drawLinesArms(x, y);
 }  
 void drawBody(int x, int y){
   strokeWeight(5);
   fill(255, 210, 0);
-  ellipse(x, y+10, width/3.5, height/7);
+  arc(x, y+10, width/3.5, height/7, 0, PI, PIE);
+  
   fill(0, 200, 255);
   rectMode(CENTER);
   strokeJoin(MITER);
   rect(x, y-20, width/3, height/6);
   
 }  
-/*void draw3Lines(int x, int y){
-  for(int i=0; i<60 ;i+=20){
-    line(x-i, y, x-i, y-30); 
+void drawLinesArms(int x, int y){
+  for(int i=0; i<100; i+=20){
+    // Arms
+    line(x+70, y+50-i, x+90, y+50-i);
+    line(x-70, y+50-i, x-90, y+50-i);
+    // Legs
+    line(x-30, y+150-i, x-10, y+150-i);
+    line(x+30, y+150-i, x+10, y+150-i);
+    // antena
+
+ 
   }  
-}
-*/
+}  
+
 void drawArms(int x, int y){
   fill(255, 210, 0);
   rect(x-80, y+10, 20, 150);
